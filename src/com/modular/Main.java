@@ -2,6 +2,8 @@ package com.modular;
 
 import pessoas.Assinante;
 import pessoas.Pessoa;
+import telefonia.CentralComutacao;
+import telefonia.CentralTelefonica;
 import telefonia.ELinhaTelefonicaStatus;
 import telefonia.LinhaTelefonica;
 
@@ -10,11 +12,25 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
 
-        LinhaTelefonica linhaTelefonica = new LinhaTelefonica("(31)97303-4518");
+        LinhaTelefonica linhaTelefonica1 = new LinhaTelefonica("(31)97303-4518");
+        LinhaTelefonica linhaTelefonica2 = new LinhaTelefonica("(31)99999-9999");
 
-        Assinante assinante = new Assinante("Lucas","098.612.066-08", linhaTelefonica);
+        Assinante lucas = new Assinante("Lucas","098.612.066-08", linhaTelefonica1);
+        Assinante lidia = new Assinante("Lidia","015.612.051-51", linhaTelefonica2);
+
+        CentralTelefonica ctA = new CentralTelefonica();
+        ctA.adicionarAssinante(lucas);
+
+        CentralTelefonica ctB = new CentralTelefonica();
+        ctB.adicionarAssinante(lidia);
+
+        CentralComutacao c = new CentralComutacao();
+        c.adicionarCentralTelefonica(ctA);
+        c.adicionarCentralTelefonica(ctB);
 
 
-        System.out.println(assinante);
+
+
+        System.out.println(c);
     }
 }

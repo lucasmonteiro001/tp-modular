@@ -32,7 +32,7 @@ public class CentralTelefonica {
      * @param a
      * @return
      */
-    public Boolean inserirAssinante(Assinante a) {
+    public Boolean adicionarAssinante(Assinante a) {
 
         try {
             this.assinantes.add(a);
@@ -42,5 +42,12 @@ public class CentralTelefonica {
             return false;
         }
 
+    }
+
+    @Override
+    public String toString() {
+        return "CentralTelefonica{" +
+                "assinantes=" + assinantes +
+                '}';
     }
 }
