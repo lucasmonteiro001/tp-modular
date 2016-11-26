@@ -27,7 +27,11 @@ public class Main {
 
         CentralComutacao c = new CentralComutacao();
         c.adicionarCentralTelefonica(ctA);
-        c.adicionarCentralTelefonica(ctB);
+
+
+        linhaTelefonica1.setCentralTelefonica(ctA);
+
+        lucas.fazerLigacao("3357-1685");
 
         System.out.println(ctA.isLinhaEmUso(linhaTelefonica1.getNumero()));
     }

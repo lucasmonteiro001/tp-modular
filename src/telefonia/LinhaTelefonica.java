@@ -7,6 +7,7 @@ public class LinhaTelefonica {
 
     private String numero; // Numero de telefone
     private ELinhaTelefonicaStatus status = ELinhaTelefonicaStatus.EM_USO.DISPONIVEL;
+    private CentralTelefonica centralTelefonica;
 
     public LinhaTelefonica() {
     }
@@ -15,9 +16,10 @@ public class LinhaTelefonica {
         this.numero = numero;
     }
 
-    public LinhaTelefonica(String numero, ELinhaTelefonicaStatus status) {
+    public LinhaTelefonica(String numero, ELinhaTelefonicaStatus status, CentralTelefonica centralTelefonica) {
         this.numero = numero;
         this.status = status;
+        this.centralTelefonica = centralTelefonica;
     }
 
     public Boolean isLinhaEmUso() {
@@ -39,6 +41,23 @@ public class LinhaTelefonica {
 
     public void setStatus(ELinhaTelefonicaStatus status) {
         this.status = status;
+    }
+
+    public CentralTelefonica getCentralTelefonica() {
+        return centralTelefonica;
+    }
+
+    public void setCentralTelefonica(CentralTelefonica centralTelefonica) {
+        this.centralTelefonica = centralTelefonica;
+    }
+
+    public void fazerLigacao(String numero) {
+
+        if(this.centralTelefonica == null) {
+            throw new Error("A LINHA TELEFONICA NECESSITA ESTAR LIGADA A ALGUMA CENTRAL TELEFONICA!");
+        }
+
+        this.centralTelefonica.fazerLigacao(numero);
     }
 
     @Override

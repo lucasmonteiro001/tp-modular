@@ -31,6 +31,12 @@ public class Assinante extends Pessoa {
         this.linhaTelefonica = linhaTelefonica;
     }
 
+    public void fazerLigacao(String numero) {
+
+        this.linhaTelefonica.fazerLigacao(numero);
+
+    }
+
     @Override
     public String toString() {
         return super.toString() + " Assinante{" +

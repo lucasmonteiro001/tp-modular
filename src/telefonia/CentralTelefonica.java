@@ -86,4 +86,8 @@ public class CentralTelefonica {
 
         return linha.isLinhaEmUso();
     }
+
+    public void fazerLigacao(String numero) {
+        System.out.println("Ligando para: " + numero);
+    }
 }
