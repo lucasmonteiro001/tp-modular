@@ -20,6 +20,7 @@ public class Main {
 
         CentralTelefonica ctA = new CentralTelefonica();
         ctA.adicionarAssinante(lucas);
+        ctA.adicionarAssinante(lidia);
 
         CentralTelefonica ctB = new CentralTelefonica();
         ctB.adicionarAssinante(lidia);
@@ -28,9 +29,6 @@ public class Main {
         c.adicionarCentralTelefonica(ctA);
         c.adicionarCentralTelefonica(ctB);
 
-
-
-
-        System.out.println(c);
+        System.out.println(ctA.isLinhaEmUso(linhaTelefonica1.getNumero()));
     }
 }

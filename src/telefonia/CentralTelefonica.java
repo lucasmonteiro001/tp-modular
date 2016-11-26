@@ -19,14 +19,6 @@ public class CentralTelefonica {
         this.assinantes = assinantes;
     }
 
-    public List<Assinante> getAssinantes() {
-        return assinantes;
-    }
-
-    public void setAssinantes(List<Assinante> assinantes) {
-        this.assinantes = assinantes;
-    }
-
     /**
      * Insere um novo assinante na lista de assinates da central telefonica
      * @param a
@@ -44,10 +36,54 @@ public class CentralTelefonica {
 
     }
 
+    public List<Assinante> getAssinantes() {
+        return assinantes;
+    }
+
+    public void setAssinantes(List<Assinante> assinantes) {
+        this.assinantes = assinantes;
+    }
+
     @Override
     public String toString() {
         return "CentralTelefonica{" +
                 "assinantes=" + assinantes +
                 '}';
+    }
+
+    /**
+     * Obtem a linha passada como parametro pelo numero ou retorna null
+     * @param numero
+     * @return
+     */
+    public LinhaTelefonica getLinhaTelefonica(String numero) {
+
+        // percorre todos os assinantes em busca da linha telefonica
+        for(Assinante assinante : this.assinantes) {
+
+            LinhaTelefonica linha = assinante.getLinhaTelefonica();
+
+            // se o numero da linha telefonica for o mesmo passado como parametro
+            if(linha.getNumero().equals(numero)) {
+
+                // retorna a linha
+                return linha;
+            }
+
+        }
+
+        return null;
+    }
+
+    public Boolean isLinhaEmUso(String numero) {
+
+        LinhaTelefonica linha = getLinhaTelefonica(numero);
+
+        // se nao achou a linha, exibe erro
+        if(linha == null) {
+            throw new Error("LINHA TELEFONICA NAO ENCONTRADA");
+        }
+
+        return linha.isLinhaEmUso();
     }
 }

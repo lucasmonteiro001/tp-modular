@@ -20,6 +20,11 @@ public class LinhaTelefonica {
         this.status = status;
     }
 
+    public Boolean isLinhaEmUso() {
+
+        return this.status.equals(ELinhaTelefonicaStatus.EM_USO);
+    }
+
     public String getNumero() {
         return numero;
     }
