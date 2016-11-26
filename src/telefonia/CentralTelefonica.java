@@ -11,12 +11,14 @@ import java.util.List;
 public class CentralTelefonica {
 
     private List<Assinante> assinantes = new LinkedList<Assinante>();
+    private CentralComutacao centralComutacao;
 
     public CentralTelefonica() {
     }
 
-    public CentralTelefonica(List<Assinante> assinantes) {
+    public CentralTelefonica(List<Assinante> assinantes, CentralComutacao centralComutacao) {
         this.assinantes = assinantes;
+        this.centralComutacao = centralComutacao;
     }
 
     /**
@@ -42,6 +44,14 @@ public class CentralTelefonica {
 
     public void setAssinantes(List<Assinante> assinantes) {
         this.assinantes = assinantes;
+    }
+
+    public CentralComutacao getCentralComutacao() {
+        return centralComutacao;
+    }
+
+    public void setCentralComutacao(CentralComutacao centralComutacao) {
+        this.centralComutacao = centralComutacao;
     }
 
     @Override
@@ -88,6 +98,11 @@ public class CentralTelefonica {
     }
 
     public void fazerLigacao(String numero) {
-        System.out.println("Ligando para: " + numero);
+
+        if(this.centralComutacao == null) {
+            throw new Error("CENTRAL TELEFONICA NAO CONECTADA A NENHUMA CENTRAL DE COMUTACAO!");
+        }
+
+
     }
 }
