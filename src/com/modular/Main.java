@@ -63,6 +63,7 @@ public class Main {
                    }
 
                    break;
+
                // se for uma central telefonica
                case 2:
                    out.println("Digite o ID da Central Telefônica que deseja controlar:");
@@ -115,10 +116,12 @@ public class Main {
 
                            switch (opcaoConfirmaCriacaoNovaLinha) {
 
+                               // Se deseja realmente criar a linha com os dados inseridos
                                case 1:
                                    // TODO chamar método da Central Telefonica para adicionar uma nova linha passado
                                    // os dados acima
                                    break;
+                               // Se não confirma os dados e deseja cancelar o cadastro
                                case 2:
                                    break;
                                default:
@@ -128,28 +131,30 @@ public class Main {
 
 
                            break;
+
                        // se for para excluir um linha telefonica
                        case 2:
 
                            break;
+
                        // se for para suspender o funcionamento de uma linha telefonica
                        case 3:
 
                            break;
+
                        default:
                            opcaoInvalida();
                            break;
                    }
 
-
-
-
-
                    break;
+
                // se for um sistema de comutacao
                case 3:
                    out.println("Sistema de Comutação");
+
                    break;
+
                // se deseja sair do sistema
                case 4:
                    System.exit(0);
