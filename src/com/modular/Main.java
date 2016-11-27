@@ -22,7 +22,8 @@ public class Main {
             out.println("Entrar como:\n" +
                     "(1) Assinante\n" +
                     "(2) Central Telefônica\n" +
-                    "(3) Sistema de Comutação");
+                    "(3) Sistema de Comutação\n" +
+                    "(4) Sair");
 
             Integer modo = reader.nextInt();
 
@@ -38,7 +39,27 @@ public class Main {
                    // FIXME verificar se o usuario está cadastrado em  alguma central telefonica
                    Boolean usuarioExistente = true;
 
-                   out.print(cpf);
+                   if(!usuarioExistente) {
+
+                       out.println("Assinante não encontrado!");
+                       break;
+                   }
+
+                   out.println("O que deseja fazer?\n" +
+                           "(1) Realizar uma ligação\n" +
+                           "(2) Desligar da ligação atual");
+
+                   Integer acao = reader.nextInt();
+
+                   switch (acao) {
+
+                       case 1:
+                           break;
+                       case 2:
+                           break;
+                       default:
+                           opcaoInvalida();
+                   }
 
                    break;
                case 2:
@@ -47,11 +68,22 @@ public class Main {
                case 3:
                    out.println("Sistema de Comutação");
                    break;
+               case 4:
+                   System.exit(0);
+                   break;
+               default:
+                   opcaoInvalida();
+                   break;
 
            }
 
            out.println("\n\nObrigado por utilizar nosso sistema!\n\n");
 
         }
+    }
+
+    public static void opcaoInvalida() {
+
+        out.println("Opção inválida!");
     }
 }
