@@ -10,6 +10,7 @@ import java.util.List;
  */
 public class CentralTelefonica {
 
+    // TODO inserir propriedade id
     private List<Assinante> assinantes = new LinkedList<Assinante>();
     private CentralComutacao centralComutacao;
 

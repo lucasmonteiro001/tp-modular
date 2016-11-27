@@ -1,4 +1,5 @@
 package com.modular;
+import static java.lang.System.out;
 
 import pessoas.Assinante;
 import pessoas.Pessoa;
@@ -7,32 +8,50 @@ import telefonia.CentralTelefonica;
 import telefonia.ELinhaTelefonicaStatus;
 import telefonia.LinhaTelefonica;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
 	// write your code here
 
-        LinhaTelefonica linhaTelefonica1 = new LinhaTelefonica("(31)97303-4518");
-        LinhaTelefonica linhaTelefonica2 = new LinhaTelefonica("(31)99999-9999");
+        while(true) {
 
-        Assinante lucas = new Assinante("Lucas","098.612.066-08", linhaTelefonica1);
-        Assinante lidia = new Assinante("Lidia","015.612.051-51", linhaTelefonica2);
+            Scanner reader = new Scanner(System.in);  // Reading from System.in
 
-        CentralTelefonica ctA = new CentralTelefonica();
-        ctA.adicionarAssinante(lucas);
-        ctA.adicionarAssinante(lidia);
+            out.println("Entrar como:\n" +
+                    "(1) Assinante\n" +
+                    "(2) Central Telefônica\n" +
+                    "(3) Sistema de Comutação");
 
-        CentralTelefonica ctB = new CentralTelefonica();
-        ctB.adicionarAssinante(lidia);
+            Integer modo = reader.nextInt();
 
-        CentralComutacao c = new CentralComutacao();
-        c.adicionarCentralTelefonica(ctA);
+           switch (modo) {
+               // se for assinante
+               case 1:
 
+                   out.println("Digite seu CPF:");
+                   String cpf = reader.next();
 
-        linhaTelefonica1.setCentralTelefonica(ctA);
+                   // buscar usuario no sistema
 
-        lucas.fazerLigacao("3357-1685");
+                   // FIXME verificar se o usuario está cadastrado em  alguma central telefonica
+                   Boolean usuarioExistente = true;
 
-        System.out.println(ctA.isLinhaEmUso(linhaTelefonica1.getNumero()));
+                   out.print(cpf);
+
+                   break;
+               case 2:
+                   out.println("Central Telefônica");
+                   break;
+               case 3:
+                   out.println("Sistema de Comutação");
+                   break;
+
+           }
+
+           out.println("\n\nObrigado por utilizar nosso sistema!\n\n");
+
+        }
     }
 }

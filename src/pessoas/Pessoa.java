@@ -3,7 +3,7 @@ package pessoas;
 /**
  * Created by lidiaferreira on 11/26/16.
  */
-public class Pessoa {
+public class    Pessoa {
 
     private String nome;
     private String cpf;
