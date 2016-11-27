@@ -135,6 +135,59 @@ public class Main {
                        // se for para excluir um linha telefonica
                        case 2:
 
+                           out.println("Deseja realizar a exclusão por CPF ou por número da Linha Telefônica?\n" +
+                                   "(1) CPF\n" +
+                                   "(2) Número da Linha Telefônica\n");
+
+                           Integer modoExclusaoLinhaTelefonica = reader.nextInt();
+
+                           switch (modoExclusaoLinhaTelefonica) {
+
+                               // realizar a exclusao da Linha Telefonica por CPF
+                               case 1:
+
+                                   out.println("Digite o número do CPF para exclusão da linha:");
+
+                                   String cpfParaExcluirLinha = reader.next();
+
+                                   // TODO buscar por assinante com esse cpf
+                                   Boolean assinanteExiste = true;
+
+                                   if(!assinanteExiste) {
+                                       out.println("Assinante não encontrado");
+                                       break;
+                                   }
+
+                                   // TODO chamar método para excluir assinante por CPF
+
+                                   break;
+                               // realizar a exclusao da Linha Telefonica por CPF
+                               case 2:
+
+                                   out.println("Digite o número da Linha Telefônica que será excluída:");
+
+                                   String numeroLinhaParaSerExcluida = reader.next();
+
+                                   // TODO buscar por linha com esse numero
+                                   Boolean linhaTelefonicaExiste = true;
+
+                                   if(!linhaTelefonicaExiste) {
+                                       out.println("Linha Telefônica não encontrada");
+                                       break;
+                                   }
+
+                                   // TODO chamar método para excluir linha telefonica por numero (excluir assinante
+                                   // tambem)
+
+                                   break;
+
+                               default:
+                                   opcaoInvalida();
+                                   break;
+
+                           }
+
+
                            break;
 
                        // se for para suspender o funcionamento de uma linha telefonica
