@@ -296,9 +296,30 @@ public class Main {
                             break;
 
                         case 4:
+
+                            out.println("Digite o ID da primeira central telefônica:");
+
+                            String idPrimeiraCentralTelefonicaDesconectar = reader.next();
+
+                            out.println("Digite o ID da segunda central telefônica:");
+
+                            String idSegundaaCentralTelefonicaDesconectar = reader.next();
+
+                            // TODO buscar se as duas centrais telefonicas existem
+                            Boolean existePrimeiraCentralTelefonicaDesconectar = true,
+                                    existeSegundaCentralTelefonicaDesconectar = true;
+
+                            if(!existePrimeiraCentralTelefonicaDesconectar || !existeSegundaCentralTelefonicaDesconectar) {
+                                out.println("Alguma das centrais telefônicas não foi encontrada.");
+                                break;
+                            }
+
+                            // TODO DESCONETAR conexão entre as duas centrains telefonicas via Linha de Comunicação
+
                             break;
 
                         default:
+                            opcaoInvalida();
                             break;
                     }
 
