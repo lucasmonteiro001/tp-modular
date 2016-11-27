@@ -244,8 +244,6 @@ public class Main {
                                     break;
 
                             }
-
-
                             break;
 
                         default:
@@ -257,7 +255,52 @@ public class Main {
 
                 // se for um sistema de comutacao
                 case 3:
-                    out.println("Sistema de Comutação");
+
+                    out.println("O que deseja fazer ?\n" +
+                            "(1) Adicionar Central Telefônica\n" +
+                            "(2) Remover Central Telefônica\n" +
+                            "(3) Criar uma Linha de Comunicação entre duas centrais telefônicas\n" +
+                            "(4) Remover uma Linha de Comunicação entre duas centrais telefônicas");
+
+                    Integer acaoCentralComutacao = reader.nextInt();
+
+                    switch (acaoCentralComutacao) {
+
+                        case 1:
+                            break;
+
+                        case 2:
+                            break;
+
+                        case 3:
+
+                            out.println("Digite o ID da primeira central telefônica:");
+
+                            String idPrimeiraCentralTelefonica = reader.next();
+
+                            out.println("Digite o ID da segunda central telefônica:");
+
+                            String idSegundaaCentralTelefonica = reader.next();
+
+                            // TODO buscar se as duas centrais telefonicas existem
+                            Boolean existePrimeiraCentralTelefonica = true,
+                                    existeSegundaCentralTelefonica = true;
+
+                            if(!existePrimeiraCentralTelefonica || !existeSegundaCentralTelefonica) {
+                                out.println("Alguma das centrais telefônicas não foi encontrada.");
+                                break;
+                            }
+
+                            // TODO realizar conexão entre as duas centrains telefonicas via Linha de Comunicação
+
+                            break;
+
+                        case 4:
+                            break;
+
+                        default:
+                            break;
+                    }
 
                     break;
 
