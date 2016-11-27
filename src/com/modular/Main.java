@@ -53,9 +53,17 @@ public class Main {
 
                    switch (acao) {
 
+                       // realizar uma ligação
                        case 1:
+                           out.println("Qual o número para o qual você deseja ligar?");
+
+                           String numero = reader.next();
+
+                           // TODO chamar o método de ligacao da linha telefonica vinculada ao assinate
                            break;
+                       // finalizar ligação atual
                        case 2:
+                           // TODO chamar o método de finalizar ligação atual
                            break;
                        default:
                            opcaoInvalida();
