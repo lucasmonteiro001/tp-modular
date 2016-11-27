@@ -77,6 +77,7 @@ public class Main {
 
                    if(!existeCentralTelefonica) {
                        out.println("Central Telefônica não encontrada!");
+                       break;
                    }
 
                    out.println("O que deseja fazer?\n" +
@@ -90,6 +91,40 @@ public class Main {
 
                        // se for para adicionar uma nova linha telefonica
                        case 1:
+
+                           out.println("Informe os dados do assinante:\n" +
+                                   "Nome:");
+
+                           String nomeAssinante = reader.next();
+
+                           out.println("CPF:");
+
+                           String cpfAssinante = reader.next();
+
+                           out.println("Número da nova linha de telefone:");
+
+                           String numeroNovaLinha = reader.next();
+
+                            out.println("Confirma os dados abaixo ?\n" +
+                                    "(1) Sim\n" +
+                                    "(2) Não\n");
+                           out.println("\tNome: " + nomeAssinante + "\n\tCPF: " + cpfAssinante + "\n\tLinha: " +
+                                   numeroNovaLinha);
+
+                           Integer opcaoConfirmaCriacaoNovaLinha = reader.nextInt();
+
+                           switch (opcaoConfirmaCriacaoNovaLinha) {
+
+                               case 1:
+                                   // TODO chamar método da Central Telefonica para adicionar uma nova linha passado
+                                   // os dados acima
+                                   break;
+                               case 2:
+                                   break;
+                               default:
+                                   opcaoInvalida();
+                                   break;
+                           }
 
 
                            break;
