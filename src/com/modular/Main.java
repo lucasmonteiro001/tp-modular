@@ -266,12 +266,38 @@ public class Main {
 
                     switch (acaoCentralComutacao) {
 
+                        // adicionar central telefonica
                         case 1:
+
+                            out.println("Digite o ID da nova Central Telefônica:");
+
+                            Integer idNovaCentralTelefonica = reader.nextInt();
+
+                            // TODO chamar método para criar nova central telefonica e adiciona-la no array em
+                            // Central de comutacao
+
                             break;
 
+                        // excluir central telefonica
                         case 2:
+
+                            out.println("Digite o ID da Central Telefônica que será removida:");
+
+                            Integer idCentralTelefonicaRemover = reader.nextInt();
+
+                            // TODO buscar pela central para ver se existe
+                            Boolean existeCentralTel = true;
+
+                            if(!existeCentralTel) {
+                                out.println("Central Telefônica não encontrada!");
+                                break;
+                            }
+
+                            // TODO exclui central telefonica
+
                             break;
 
+                        // conectar duas centrais telefonicas
                         case 3:
 
                             out.println("Digite o ID da primeira central telefônica:");
@@ -295,6 +321,7 @@ public class Main {
 
                             break;
 
+                        // desconectar centrais telefonicas
                         case 4:
 
                             out.println("Digite o ID da primeira central telefônica:");
