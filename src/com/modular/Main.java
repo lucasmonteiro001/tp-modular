@@ -1,14 +1,7 @@
 package com.modular;
-import static java.lang.System.out;
-
-import pessoas.Assinante;
-import pessoas.Pessoa;
-import telefonia.CentralComutacao;
-import telefonia.CentralTelefonica;
-import telefonia.ELinhaTelefonicaStatus;
-import telefonia.LinhaTelefonica;
-
 import java.util.Scanner;
+
+import static java.lang.System.out;
 
 public class Main {
 
@@ -70,12 +63,59 @@ public class Main {
                    }
 
                    break;
+               // se for uma central telefonica
                case 2:
-                   out.println("Central Telefônica");
+                   out.println("Digite o ID da Central Telefônica que deseja controlar:");
+
+                   String idCentral = reader.next();
+
+                   // buscar a central telefonica no sistema
+
+                   // FIXME verificar se a central existe
+
+                   Boolean existeCentralTelefonica = true;
+
+                   if(!existeCentralTelefonica) {
+                       out.println("Central Telefônica não encontrada!");
+                   }
+
+                   out.println("O que deseja fazer?\n" +
+                           "(1) Adicionar nova linha telefônica\n" +
+                           "(2) Excluir linha telefônica\n" +
+                           "(3) Suspender funcionamento de linha telefônica");
+
+                   Integer acaoCentralTelefonica = reader.nextInt();
+
+                   switch (acaoCentralTelefonica) {
+
+                       // se for para adicionar uma nova linha telefonica
+                       case 1:
+
+
+                           break;
+                       // se for para excluir um linha telefonica
+                       case 2:
+
+                           break;
+                       // se for para suspender o funcionamento de uma linha telefonica
+                       case 3:
+
+                           break;
+                       default:
+                           opcaoInvalida();
+                           break;
+                   }
+
+
+
+
+
                    break;
+               // se for um sistema de comutacao
                case 3:
                    out.println("Sistema de Comutação");
                    break;
+               // se deseja sair do sistema
                case 4:
                    System.exit(0);
                    break;
