@@ -1,4 +1,4 @@
-package com.modular;
+package main;
 import java.util.Scanner;
 
 import static java.lang.System.out;
