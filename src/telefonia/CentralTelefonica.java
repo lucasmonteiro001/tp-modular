@@ -10,14 +10,16 @@ import java.util.List;
  */
 public class CentralTelefonica {
 
-    // TODO inserir propriedade id
+    private String id;
     private List<Assinante> assinantes = new LinkedList<Assinante>();
     private CentralComutacao centralComutacao;
 
-    public CentralTelefonica() {
+    public CentralTelefonica(String id) {
+        this.id = id;
     }
 
-    public CentralTelefonica(List<Assinante> assinantes, CentralComutacao centralComutacao) {
+    public CentralTelefonica(String id, List<Assinante> assinantes, CentralComutacao centralComutacao) {
+        this.id = id;
         this.assinantes = assinantes;
         this.centralComutacao = centralComutacao;
     }
@@ -39,28 +41,37 @@ public class CentralTelefonica {
 
     }
 
-    public List<Assinante> getAssinantes() {
-        return assinantes;
+    public Assinante removerAssinantePorCpf(String cpf) {
+
+        try {
+            // TODO buscar o assinante pelo ID e remove-lo
+        } catch (Error e) {
+            System.out.println(e);
+            return null;
+        }
+
+        return null;
+
     }
 
-    public void setAssinantes(List<Assinante> assinantes) {
-        this.assinantes = assinantes;
+    public Assinante removerAssinantePorNumeroLinha(String numeroLinhaTelefonica) {
+
+        try {
+            // TODO buscar o assinante pelo numero da linha telefonica e remove-lo
+        } catch (Error e) {
+            System.out.println(e);
+            return null;
+        }
+
+        return null;
+
     }
 
-    public CentralComutacao getCentralComutacao() {
-        return centralComutacao;
+    public void suspenderLinhaTelefonica (String numeroLinhaTelefonica) {
+
+        // TODO buscar todas as linha telefonicas e remover a que possuir o numero igual a numeroLinhaTelefonica
     }
 
-    public void setCentralComutacao(CentralComutacao centralComutacao) {
-        this.centralComutacao = centralComutacao;
-    }
-
-    @Override
-    public String toString() {
-        return "CentralTelefonica{" +
-                "assinantes=" + assinantes +
-                '}';
-    }
 
     /**
      * Obtem a linha passada como parametro pelo numero ou retorna null
@@ -106,4 +117,28 @@ public class CentralTelefonica {
 
 
     }
+
+    public List<Assinante> getAssinantes() {
+        return assinantes;
+    }
+
+    public void setAssinantes(List<Assinante> assinantes) {
+        this.assinantes = assinantes;
+    }
+
+    public CentralComutacao getCentralComutacao() {
+        return centralComutacao;
+    }
+
+    public void setCentralComutacao(CentralComutacao centralComutacao) {
+        this.centralComutacao = centralComutacao;
+    }
+
+    @Override
+    public String toString() {
+        return "CentralTelefonica{" +
+                "assinantes=" + assinantes +
+                '}';
+    }
+
 }

@@ -43,6 +43,16 @@ public class CentralComutacao {
 
     }
 
+    public void removerCentralTelefonica (String idCentralTelefonica) {
+
+        // TODO remover centrar telefonica dado o seu id
+    }
+
+    public void removerLinhaComunicacao (CentralTelefonica a, CentralTelefonica b) {
+
+       // TODO remover a linha de comunicacao que conecta A e B
+    }
+
     public List<CentralTelefonica> getCentraisTelefonicas() {
         return centraisTelefonicas;
     }

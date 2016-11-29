@@ -67,4 +67,8 @@ public class LinhaTelefonica {
                 ", status=" + status +
                 '}';
     }
+
+    public void desligar() {
+        // TODO chamar método da central telefonica
+    }
 }

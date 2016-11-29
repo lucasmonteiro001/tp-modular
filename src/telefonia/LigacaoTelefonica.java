@@ -9,6 +9,7 @@ public class LigacaoTelefonica {
     private CentralTelefonica centralA;
     private LinhaTelefonica linhaB;
     private CentralTelefonica centralB;
+    private Integer duracaoChamada; // duracao em segundos
 
     public LigacaoTelefonica() {
     }
@@ -50,6 +51,14 @@ public class LigacaoTelefonica {
 
     public void setCentralB(CentralTelefonica centralB) {
         this.centralB = centralB;
+    }
+
+    public Integer getDuracaoChamada() {
+        return duracaoChamada;
+    }
+
+    public void setDuracaoChamada(Integer duracaoChamada) {
+        this.duracaoChamada = duracaoChamada;
     }
 
     @Override

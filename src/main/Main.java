@@ -1,4 +1,6 @@
 package main;
+import telefonia.CentralComutacao;
+
 import java.util.Scanner;
 
 import static java.lang.System.out;
@@ -7,6 +9,9 @@ public class Main {
 
     public static void main(String[] args) {
         // write your code here
+
+
+        CentralComutacao c = new CentralComutacao();
 
         while(true) {
 
@@ -120,6 +125,8 @@ public class Main {
                                 case 1:
                                     // TODO chamar método da Central Telefonica para adicionar uma nova linha passado
                                     // os dados acima
+
+                                    out.println("Linha Telefônica adicionada com sucesso!");
                                     break;
                                 // Se não confirma os dados e deseja cancelar o cadastro
                                 case 2:
@@ -164,7 +171,7 @@ public class Main {
                                 // realizar a exclusao da Linha Telefonica por Numero da Linha Telefonica
                                 case 2:
 
-                                    out.println("Digite o número da Linha Telefônica que será suspendida:");
+                                    out.println("Digite o número da Linha Telefônica que será suspensa:");
 
                                     String numeroLinhaParaSerSuspendida = reader.next();
 
@@ -175,6 +182,8 @@ public class Main {
                                         out.println("Linha Telefônica não encontrada");
                                         break;
                                     }
+
+                                    out.println("Linha suspensa com sucesso!");
 
                                     // TODO chamar método para excluir linha telefonica por numero (excluir assinante
                                     // tambem)
@@ -233,6 +242,8 @@ public class Main {
                                         out.println("Linha Telefônica não encontrada");
                                         break;
                                     }
+
+                                    out.println("Linha suspensa com sucesso!");
 
                                     // TODO chamar método para excluir linha telefonica por numero (excluir assinante
                                     // tambem)

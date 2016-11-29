@@ -1,6 +1,5 @@
 package pessoas;
 
-import telefonia.ELinhaTelefonicaStatus;
 import telefonia.LinhaTelefonica;
 
 /**
@@ -34,7 +33,10 @@ public class Assinante extends Pessoa {
     public void fazerLigacao(String numero) {
 
         this.linhaTelefonica.fazerLigacao(numero);
+    }
 
+    public void desligar() {
+        this.linhaTelefonica.desligar();
     }
 
     @Override
