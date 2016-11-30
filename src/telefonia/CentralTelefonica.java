@@ -43,33 +43,83 @@ public class CentralTelefonica {
 
     public Assinante removerAssinantePorCpf(String cpf) {
 
+        Assinante assinanteRemovido = null;
+
         try {
-            // TODO buscar o assinante pelo ID e remove-lo
+
+            List<Assinante> l = new LinkedList<Assinante>();
+
+            for(Assinante a : this.assinantes) {
+
+                // se o assinante eh diferente do passado como parametro, adiciona para a nova lista
+                if(!a.getCpf().equals(cpf)) {
+                    l.add(a);
+                }
+                // eh o assinate a ser removido
+                else {
+                    assinanteRemovido = a;
+                }
+            }
+
+            this.assinantes = l;
+
         } catch (Error e) {
             System.out.println(e);
             return null;
         }
 
-        return null;
+        return assinanteRemovido;
 
     }
 
     public Assinante removerAssinantePorNumeroLinha(String numeroLinhaTelefonica) {
 
+
+        Assinante assinanteRemovido = null;
+
         try {
-            // TODO buscar o assinante pelo numero da linha telefonica e remove-lo
+
+            List<Assinante> l = new LinkedList<Assinante>();
+
+            for(Assinante a : this.assinantes) {
+
+                // se o assinante eh diferente do passado como parametro, adiciona para a nova lista
+                if(!a.getLinhaTelefonica().getNumero().equals(numeroLinhaTelefonica)) {
+                    l.add(a);
+                }
+                // eh o assinate a ser removido
+                else {
+                    assinanteRemovido = a;
+                }
+            }
+
+            this.assinantes = l;
+
         } catch (Error e) {
             System.out.println(e);
             return null;
         }
 
-        return null;
-
+        return assinanteRemovido;
     }
 
     public void suspenderLinhaTelefonica (String numeroLinhaTelefonica) {
 
-        // TODO buscar todas as linha telefonicas e remover a que possuir o numero igual a numeroLinhaTelefonica
+        try {
+
+            for(Assinante a : this.assinantes) {
+
+                // Se achou a linha que se deve suspender
+                if(a.getLinhaTelefonica().getNumero().equals(numeroLinhaTelefonica)) {
+                    a.getLinhaTelefonica().setStatus(ELinhaTelefonicaStatus.EM_USO);
+                }
+            }
+
+
+        } catch (Error e) {
+            System.out.println(e);
+        }
+
     }
 
 
@@ -115,7 +165,7 @@ public class CentralTelefonica {
             throw new Error("CENTRAL TELEFONICA NAO CONECTADA A NENHUMA CENTRAL DE COMUTACAO!");
         }
 
-
+        // TODO fazer roteamento e conectar
     }
 
     public List<Assinante> getAssinantes() {
