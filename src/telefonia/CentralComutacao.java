@@ -45,12 +45,46 @@ public class CentralComutacao {
 
     public void removerCentralTelefonica (String idCentralTelefonica) {
 
-        // TODO remover centrar telefonica dado o seu id
+        List<CentralTelefonica> l = new LinkedList<CentralTelefonica>();
+
+        for(CentralTelefonica c : this.centraisTelefonicas) {
+
+            // se a central telefonica for dirente da passada como parametro, adiciona para
+            // a nova lista de centrais
+            if(!c.getId().equals(idCentralTelefonica)) {
+                l.add(c);
+            }
+        }
+
+        this.centraisTelefonicas = l;
+
     }
 
     public void removerLinhaComunicacao (CentralTelefonica a, CentralTelefonica b) {
 
-       // TODO remover a linha de comunicacao que conecta A e B
+        List<LinhaComunicacao> l = new LinkedList<LinhaComunicacao>();
+
+        for(LinhaComunicacao c : this.linhasComunicacao) {
+
+            // se a linha de comunicacao entre as centrais for encontrada, nao adiciona na nova lista
+            // de comunicacao
+
+            // caso onde a != central 1 e a != central 2
+            if(!c.getCentralTelefonica1().getId().equals(a.getId()) && !c.getCentralTelefonica2().getId().equals(a
+                    .getId())) {
+
+                l.add(c);
+            }
+            // caso onde b != central 1 e b != central 2
+            else if(!c.getCentralTelefonica1().getId().equals(b.getId()) && !c.getCentralTelefonica2().getId().equals(b
+                    .getId())) {
+
+                l.add(c);
+            }
+            // TODO edge cases
+        }
+
+        this.linhasComunicacao = l;
     }
 
     public List<CentralTelefonica> getCentraisTelefonicas() {
